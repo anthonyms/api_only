@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby Version: ruby 2.5.0
+* Rails Version: Rails 5.1.6
+* Server: Passenger
+* Database: Postgres
+* Deployed to IP: 142.93.13.239
 
-Things you may want to cover:
+## Endpoints
+   POST `/api/v1/users/register :email, :phone, :password`
+   
+   POST `/api/v1/users/login :email, :password`
+   
+   POST `/api/v1/transfer/transfer :sender, :recipient, :amount`
+   
+   POST `/api/v1/account/top_up :account, :amount`
+   
+   POST `/api/v1/account/report :account, :start_date, :end_date`
+   
+   
+   
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
