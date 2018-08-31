@@ -8,4 +8,10 @@ class ApplicationMailer < ActionMailer::Base
     @transfer = transfer
     mail(to: transfer.to_account.email, subject: 'You have been paid')
   end
+
+  def transaction_report(account, transfers)
+    @account = account
+    @transfers = transfers
+    mail(to: account.email, subject: 'Your transfer history')
+  end
 end

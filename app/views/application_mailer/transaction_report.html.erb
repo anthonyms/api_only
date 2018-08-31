@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>Hi <%= @account.phone %>,</p>
+
+<p> <%= "Here is a record of your transactions" %></p>
+
+<table>
+  <thead>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @transfers.each do |transfer| %>
+    <tr>
+      <td align="center"><%= transfer.from_account.phone %></td>
+      <td align="center"><%= transfer.to_account.phone %></td>
+      <td align="center"><%= transfer.amount %></td>
+      <td align="center"><%= transfer.created_at %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>Use the money wisely.</p>
+
+</body>
+</html>

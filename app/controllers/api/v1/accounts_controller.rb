@@ -22,6 +22,7 @@ class Api::V1::AccountsController < ApplicationController
     transfers = account&.transfers
     if transfers
       render json: { transfers: transfers }, status: 201
+      ApplicationMailer.transaction_report(account, transfers).deliver!
     else
       render json: { error: 'Unable to display transfers' }, status: 400
     end
