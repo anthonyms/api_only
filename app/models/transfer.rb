@@ -17,10 +17,10 @@ class Transfer < ApplicationRecord
   private
 
   def send_notification
-
+    # SmsSender.send(to_account.phone, 'Umepata Pesa')
   end
 
   def send_email_confirmation
-
+      # ApplicationMailer.send_email_confirmation(to_account.email)
   end
 end

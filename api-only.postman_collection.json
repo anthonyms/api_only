@@ -1,0 +1,182 @@
+{
+	"variables": [],
+	"info": {
+		"name": "api-only",
+		"_postman_id": "49d1e3e7-e9df-941b-e78f-4b32c344ea17",
+		"description": "Endpoints for api-only",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User registration",
+			"request": {
+				"url": "http://142.93.13.239/api/v1/users/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phone",
+							"value": "+254718364040",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "anthony.musyoki@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "new User registration"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"url": "http://142.93.13.239/api/v1/users/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "anthony.musyoki@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "User login"
+			},
+			"response": []
+		},
+		{
+			"name": "Account Top-up",
+			"request": {
+				"url": "http://142.93.13.239/api/v1/account/top_up",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2VtYWlsIjoiYW50aG9ueS5tdXN5b2tpQGdtYWlsLmNvbSIsImV4cGlyeSI6MTUzNTc5NjM4OX0.JGpIcv_cD86JbCsMLynQh4xeuiy4VxqkL9hADKyBbx8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account",
+							"value": "+254736218220",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "75",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"url": "http://142.93.13.239/api/v1/transfer/transfer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2VtYWlsIjoiYW50aG9ueS5tdXN5b2tpQGdtYWlsLmNvbSIsImV4cGlyeSI6MTUzNTc5NjM4OX0.JGpIcv_cD86JbCsMLynQh4xeuiy4VxqkL9hADKyBbx8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "from",
+							"value": "+254736218220",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "to",
+							"value": "+254718364040",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "50",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Endpoing for users to transfer funds betwwen selves"
+			},
+			"response": []
+		},
+		{
+			"name": "Transfers Report",
+			"request": {
+				"url": "http://142.93.13.239/api/v1/account/report",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2VtYWlsIjoiYW50aG9ueS5tdXN5b2tpQGdtYWlsLmNvbSIsImV4cGlyeSI6MTUzNTc5NjM4OX0.JGpIcv_cD86JbCsMLynQh4xeuiy4VxqkL9hADKyBbx8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account",
+							"value": "+254736218220",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Transfers Report for a particular account"
+			},
+			"response": []
+		}
+	]
+}
