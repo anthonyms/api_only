@@ -4,7 +4,7 @@ class Transfer < ApplicationRecord
 
   validates :amount, numericality: { greater_than: 0 }
 
-  after_create :send_notification, :send_email_confirmation
+  after_create_commit :send_notification, :send_email_confirmation
 
   def as_json(options = nil)
     { from: from_account.user.phone,
@@ -21,6 +21,6 @@ class Transfer < ApplicationRecord
   end
 
   def send_email_confirmation
-      # ApplicationMailer.send_email_confirmation(to_account.email)
+    ApplicationMailer.send_transaction_receipt_notification(self).deliver!
   end
 end

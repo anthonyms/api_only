@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>Hi <%= @transfer.to_account.phone %>,</p>
+
+<p> <%= "You received #{number_to_currency(@transfer.amount.to_d)} from #{@transfer.from_account.phone} on #{@transfer.created_at.to_formatted_s(:long_ordinal)}." %></p>
+<p>Use the money wisely.</p>
+
+</body>
+</html>

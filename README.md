@@ -4,7 +4,6 @@
 * Rails Version: Rails 5.1.6
 * Server: Passenger
 * Database: Postgres
-* Deployed to IP: 142.93.13.239
 
 ## Endpoints
    POST `/api/v1/users/register :email, :phone, :password`
