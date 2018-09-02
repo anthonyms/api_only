@@ -17,7 +17,7 @@ class Transfer < ApplicationRecord
   private
 
   def send_notification
-    # SmsSender.send(to_account.phone, 'Umepata Pesa')
+    SmsSender.send_transaction_receipt_notification!(self)
   end
 
   def send_email_confirmation
